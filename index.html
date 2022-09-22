@@ -113,6 +113,7 @@
       <li class="nav-item"><a class="nav-link" href="#idocs_box_layout2">Poles list</a></li>
 			<li class="nav-item"><a class="nav-link" href="#idocs_footer">Pole Model</a></li>
       <li class="nav-item"><a class="nav-link" href="#idocs_box_layout1">Current Readings</a></li>
+		  <li class="nav-item"><a class="nav-link" href="#idocs_box_layout3">All Current Readings</a></li>
           </ul>
         </li>
         <!-- <li class="nav-item"><a class="nav-link" href="#idocs_content">Azure</a>
@@ -558,6 +559,59 @@
     </section>
 
 <hr class="divider">
+	      
+<hr class="divider">
+
+
+    <!-- Box Layout Style
+		============================ -->
+    <section id="idocs_box_layout3">
+      <h2>Get All Current Readings</h2>
+      <p>In Azure trigger are method where we and write a code and write our development logic's to implement & GET ,POST our data using it . <a class="ml-1" target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings?tabs=csharp"><i class="fas fa-external-link-alt"></i> Azure trigger</a></p>
+          <p>Using this trigger we get access to token for get all api data .</p>
+          <p><li><code>base_url/api/GetCurrentReadingsForAllPoles?Projectid=<code>Product Id</code>&token=<code>Token key</code></code> - Get Readings Project according to User's  </li></p>
+          <pre><code class="html">JSON RESPONSE
+           
+     [
+		    {
+			"PoleId": "12057-2853234729",
+			"ReadingDate": "2022-09-22",
+			"ReadingTime": 7,
+			"CurrentBatteryPer": 73.5,
+			"CurrentPannelPer": 0.0,
+			"LightHealthByPlan": 0.0,
+			"PannelPerDeviation": -0.026046213229690595,
+			"IsOnline": 1,
+			"batteryVoltage1": 12.976,
+			"batteryVoltage2": 13.258,
+			"PannelAVGPer_ProjectLevel": 0.026046213229690595,
+			"CurrentLightRatio": 38.96666666666667,
+			"batteryElecCurrent1": 47.0,
+			"batteryElecCurrent2": 100.0
+		    },
+		    {
+			"PoleId": "12057-2846634708",
+			"ReadingDate": "2022-09-22",
+			"ReadingTime": 7,
+			"CurrentBatteryPer": 22.0,
+			"CurrentPannelPer": 0.33264000000000005,
+			"LightHealthByPlan": 0.0,
+			"PannelPerDeviation": 0.30659378677030946,
+			"IsOnline": 1,
+			"batteryVoltage1": 12.943,
+			"batteryVoltage2": 0.0,
+			"PannelAVGPer_ProjectLevel": 0.026046213229690595,
+			"CurrentLightRatio": 39.63333333333334,
+			"batteryElecCurrent1": 44.0,
+			"batteryElecCurrent2": 0.0
+		    }
+      ]
+
+
+</code></pre>
+    </section>
+
+<hr class="divider">	      
 		
 		<!-- Content
 		============================ -->
