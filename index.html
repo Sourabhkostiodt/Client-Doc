@@ -418,27 +418,48 @@
 		<!-- Navbar
 		============================ -->
         <section id="idocs_navbar">
-          <h2>Get Projects List</h2>
-          <p>In Azure trigger are method where we and write a code and write our development logic's to implement & GET ,POST our data using it . <a class="ml-1" target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings?tabs=csharp"><i class="fas fa-external-link-alt"></i> Azure trigger</a></p>
-          <p>Using this trigger we get access to token for get all api data .</p>
-          <p><li><code>base_url/api/GetProjectsList?token=<code>Token key</code></code> - Get Project List according to User's  </li></p>
-          <pre><code class="html">JSON RESPONSE
-                 
-        [
-            {
-                "ProjectID": "<code> Project ID </code>",,
-                "ProjectName": ""<code> Project Name </code>","
-            },
-            {
-                "ProjectID": "<code> Project ID </code>",,
-                "ProjectName": ""<code> Project Name </code>","
-            }
-            
-        ]
+         <h2>List of Projects</h2>
+        <p>IThe GetProjectsList API allows users to retrieve the list of Projects they will be able to access with their account along with the ID of said projects. ProjectIDs will be used in other API calls to retrieve further information.</p>
+        <table class="table table-bordered">
+					  <thead class="thead-dark">
+					    <tr>
+					      <th scope="col">Function</th>
+					      <th scope="col">Input </th>
+					      <th scope="col">Return</th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					    <tr>
+					      <td><code>base_url/api/GetProjectsList?token=Token key</code></td>
+						<td>token 
+						</td>
+					      <td>Return Entire Project List including Project IDs</td>
+					    </tr>
+            </tbody>
+       </table>
+						  
+        <h5>Example:</h5> <br>
+        <h6>Input:  <a href="https://streetleaf.azurewebsites.net/api/GetProjectList?token=token">https://streetleaf.azurewebsites.net/api/GetProjectList?token=token</a></h6>
+        
+          <h6>Return :</h6>
+       
+        <pre><code class="html">JSON RESPONSE
+               
+      [
+          {
+              "ProjectID": "<code> Project ID </code>",,
+              "ProjectName": ""<code> Project Name </code>","
+          },
+          {
+              "ProjectID": "<code> Project ID </code>",,
+              "ProjectName": ""<code> Project Name </code>","
+          }
+          
+      ]
 
 
 </code></pre>
-        
+      
         </section>
 		
 		<hr class="divider">
@@ -446,37 +467,59 @@
 		<!-- Sidebar
 		============================ -->
         <section id="idocs_sidebar">
-          <h2>Get Projects Details</h2>
-          <p>In Azure trigger are method where we and write a code and write our development logic's to implement & GET ,POST our data using it . <a class="ml-1" target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings?tabs=csharp"><i class="fas fa-external-link-alt"></i> Azure trigger</a></p>
-          <p>Using this trigger we get access to token for get all api data .</p>
-          <p><li><code>base_url/api/GetProjectsDetails?Projectid=<code>Project Id</code>&token=<code>Token key</code></code> - Get Project Single Project according to User's  </li></p>
-          <pre><code class="html">JSON RESPONSE
-           
-            
-       
+           <h2>Project Details</h2>
+        <p>The GetProjectDetails API allows users to retrieve details of a specific project.</p>
+        <table class="table table-bordered">
+					  <thead class="thead-dark">
+					    <tr>
+					      <th scope="col">Function</th>
+					      <th scope="col">Input </th>
+					      <th scope="col">Return</th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					    <tr>
+					      <td><code>base_url/api/GetProjectsDetails?Projectid=Project Id&token=Token key</code></td>
+						    <td>Project ID,</br>
+							token
+						</td>
+					      <td>Returns Details of Specific Project</td>
+					    </tr>
+            </tbody>
+       </table>
+						  
+        <h5>Example:</h5> <br>
+        <h6>Input:  <a href="https://streetleaf.azurewebsites.net/api/GetProjectDetails?Projectid=projectid &token=token">hhttps://streetleaf.azurewebsites.net/api/GetProjectDetails?Projectid=projectid &token=token</a></h6>
+        
+          <h6>Return :</h6>
+        
+        <pre><code class="html">JSON RESPONSE
+         
+          
+     
 
-        [
-              {
-                  "DimProjectID": "<code> Project ID </code>",
-                  "ProjectIDBusinessKey": "<code> Key </code>",
-                  "ProjectName": "<code> Project Name </code>",
-                  "ProjectCode": null,
-                  "TimeZone": "EST",
-                  "ReadingTime": "2022-04-24T14:05:00",
-                  "ModifiedOn": null,
-                  "SourceName": null,
-                  "BatchHistoryID": 1,
-                  "DimDateIDInsert": <code> Date </code>,
-                  "Remark": null,
-                  "Address": null,
-                  "Country": null,
-                  "State": null,
-                  "County": null,
-                  "Zip": 33545,
-                  "TimeStart": "2022-04-25T19:38:05.540000",
-                  "TimeEnd": "9999-12-31T23:59:59.990000"
-              }
-      ]
+      [
+            {
+                "DimProjectID": "<code> Project ID </code>",
+                "ProjectIDBusinessKey": "<code> Key </code>",
+                "ProjectName": "<code> Project Name </code>",
+                "ProjectCode": null,
+                "TimeZone": "EST",
+                "ReadingTime": "2022-04-24T14:05:00",
+                "ModifiedOn": null,
+                "SourceName": null,
+                "BatchHistoryID": 1,
+                "DimDateIDInsert": <code> Date </code>,
+                "Remark": null,
+                "Address": null,
+                "Country": null,
+                "State": null,
+                "County": null,
+                "Zip": 33545,
+                "TimeStart": "2022-04-25T19:38:05.540000",
+                "TimeEnd": "9999-12-31T23:59:59.990000"
+            }
+    ]
 
 
 </code></pre>
@@ -487,30 +530,51 @@
 		<!-- Box Layout Style
 		============================ -->
         <section id="idocs_box_layout">
-          <h2>Get Poles Details</h2>
-          <p>In Azure trigger are method where we and write a code and write our development logic's to implement & GET ,POST our data using it . <a class="ml-1" target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings?tabs=csharp"><i class="fas fa-external-link-alt"></i> Azure trigger</a></p>
-          <p>Using this trigger we get access to token for get all api data .</p>
-          <p><li><code>base_url/api/GetPoleDetails?PoleId=<code>Project Id</code>&token=<code>Token key</code></code> - Get Project Single Project according to User's  </li></p>
-          <pre><code class="html">JSON RESPONSE
-           
-            
-        [
-            {
-                "ProjectID": <code>Project Id</code>,
-                "PoleNumber": "<code>Pole Number</code>",
-                "ModelID": "<code>Model Id</code>",
-                "Longitude": -80.722196,
-                "Latitude": 27.998257,
-                "ProductID": "A3P70LA021090796",
-                "Gateway": "GT17L94A2107247B",
-                "Sunboardpower": "80",
-                "LightPower": "30",
-                "Battery": "512",
-                "BatterVoltage": "13",
-                "BatteryCapacity1": "256",
-                "BatteryCapacity2": "256"
-            }
-        ]
+          <h2>Get Pole Details</h2>
+        <p>The GetPolesList API allows users to retrieve the list of all poles and relative GPS coordinates of a specific Project based on Project ID.</p>
+        <table class="table table-bordered">
+					  <thead class="thead-dark">
+					    <tr>
+					      <th scope="col">Function</th>
+					      <th scope="col">Input </th>
+					      <th scope="col">Return</th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					    <tr>
+					      <td><code>base_url/api/GetPoleDetails?PoleId=Pole Id&token=Token</code></td>
+						    <td>Pole ID,</br>
+							token
+						</td>
+					      <td>All Static Information of “Pole Number”</td>
+					    </tr>
+            </tbody>
+       </table>
+						  
+        <h5>Example:</h5> <br>
+        <h6>Input:  <a href="https://streetleaf.azurewebsites.net/api/GetPoleDetails?PoleId=Poleid&token=token">https://streetleaf.azurewebsites.net/api/GetPoleDetails?PoleId=Poleid&token=token</a></h6>
+        
+          <h6>Return :</h6>
+        <pre><code class="html">JSON RESPONSE
+         
+          
+      [
+          {
+              "ProjectID": <code>Project Id</code>,
+              "PoleNumber": "<code>Pole Number</code>",
+              "ModelID": "<code>Model Id</code>",
+              "Longitude": -80.722196,
+              "Latitude": 27.998257,
+              "ProductID": "A3P70LA021090796",
+              "Gateway": "GT17L94A2107247B",
+              "Sunboardpower": "80",
+              "LightPower": "30",
+              "Battery": "512",
+              "BatterVoltage": "13",
+              "BatteryCapacity1": "256",
+              "BatteryCapacity2": "256"
+          }
+      ]
 
 
 </code></pre>
