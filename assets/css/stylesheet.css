@@ -78,10 +78,7 @@ body {
 .custom-logo__leaf {
   color: #00b1ae;
 }
-table,a{
-     display: block;
-    overflow-x: auto;
-}
+
 .img-fluid {
   max-width: 100%;
   height: auto;
