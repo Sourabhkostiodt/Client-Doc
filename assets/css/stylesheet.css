@@ -78,7 +78,7 @@ body {
 .custom-logo__leaf {
   color: #00b1ae;
 }
-table{
+table,a{
      display: block;
     overflow-x: auto;
 }
