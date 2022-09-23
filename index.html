@@ -99,7 +99,7 @@
             <li class="nav-item"><a class="nav-link" href="#idocs_installation">API's and URL's</a></li>
             <li class="nav-item"><a class="nav-link" href="#idocs_sass">Functions</a></li>
 		  <li class="nav-item"><a class="nav-link" href="#idocs_html_structure">Triggers</a></li>
-            <li class="nav-item"><a class="nav-link" href="#idocs_color_schemes">SAM</li>
+            <li class="nav-item"><a class="nav-link" href="#idocs_color_schemes">SAM</a></li>
              <li class="nav-item"><a class="nav-link" href="#idocs_theme_customization">Add Users</a></li>
            <li class="nav-item"><a class="nav-link" href="#idocs_code">Azure Code</a></li> 
           </ul>
@@ -354,25 +354,13 @@
 		<hr class="divider"> 
         <!-- Logo Settings
 		============================ -->
-        <!-- <section id="idocs_logo_settings">
-          <h2>Logo Settings</h2>
-          <p>The Logo Container can be found in the Header Container - <code>&lt;header&gt;</code></p>
-          <pre><code class="html">&lt;!-- Logo --&gt; 
-&lt;a class=&quot;logo ml-3 ml-md-0&quot; href=&quot;index.html&quot; title=&quot;iDocs&quot;&gt;
-   &lt;img src=&quot;images/logo-light.png&quot; alt=&quot;iDocs&quot;/&gt;
-&lt;/a&gt;
-&lt;!-- Logo End --&gt;
-</code></pre>
-        </section>
-		
-        
-		<hr class="divider"> 
+    
 		
 		<!-- Layout
 		============================ -->
         <section id="idocs_layout">
           <h2>All Triggers</h2>
-          <p class="lead mb-5">Documentation have all trigger which we use in project</p>
+          <p class="lead mb-5">Detailed description of all Triggers in this API</p>
         </section>
 		
 		
@@ -380,25 +368,48 @@
 		============================ -->
         <section id="idocs_header">
           <h2>Streetleaf Login</h2>
-          <p>In Azure trigger are method where we and write a code and write our development logic's to implement & GET ,POST our data using it . <a class="ml-1" target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings?tabs=csharp"><i class="fas fa-external-link-alt"></i> Azure trigger</a></p>
-          <p>Using this trigger we get access to token for get all api data .</p>
-          <p><li><code>base_url/api/StreetleafLogin?name=<code> First Name </code>&password=<code> password </code></code> - Login Users </li></p>
-          <pre><code class="html">JSON RESPONSE
-           
-            
-            
-             [
-                  {
-                      "FirstName": "<code> User Name </code>",
-                      "Token": "<code> Token Key </code>",
-                      "Code": "200",
-                      "Status": "Logged in Successfully. Please Use this token for rest of data"
-                  }
-              ]
+        <p>The Login API allows users to retrieve what Token is associated with their account.Tokens are really important and need to be passed at every request except for the Login info
+</p>
+	      
+	      <table class="table table-bordered">
+					  <thead class="thead-dark">
+					    <tr>
+					      <th scope="col">Function</th>
+					      <th scope="col">Input </th>
+					      <th scope="col">Return</th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					    <tr>
+					      <td><code>base_url/api/Login?name=First Name &password= password</code></td>
+						    <td>Username </br>
+						Password
+						</td>
+					      <td>Returns User Login info and token</td>
+					    </tr>
+            </tbody>
+       </table>
+						  
+        <h5>Example:</h5> <br>
+        <h6>Input:  <a href="https://streetleaf.azurewebsites.net/api/Login?Name=name&password=password">https://streetleaf.azurewebsites.net/api/Login?Name=name&password=password</a></h6>
+        
+          <h6>Return :</h6>
+        <pre><code class="html">JSON RESPONSE
+         
+          
+          
+           [
+                {
+                    "FirstName": "<code> User Name </code>",
+                    "Token": "<code> Token Key </code>",
+                    "Code": "200",
+                    "Status": "Logged in Successfully. Please use this token for rest of data"
+                }
+            ]
 
 
 </code></pre>
-        
+      
        
         </section>
 		
