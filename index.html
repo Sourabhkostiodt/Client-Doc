@@ -96,10 +96,10 @@
       <ul class="nav flex-column ">
         <li class="nav-item"><a class="nav-link active" href="#idocs_start">Getting Started</a>
           <ul class="nav flex-column">
-            <li class="nav-item"><a class="nav-link" href="#idocs_installation">API's & URL's</a></li>
-            <li class="nav-item"><a class="nav-link" href="#idocs_html_structure">Triggers</a></li>
-            <li class="nav-item"><a class="nav-link" href="#idocs_sass">Function App</a></li>
-            <li class="nav-item"><a class="nav-link" href="#idocs_color_schemes">Server Less API's</a></li>
+            <li class="nav-item"><a class="nav-link" href="#idocs_installation">API's and URL's</a></li>
+            <li class="nav-item"><a class="nav-link" href="#idocs_sass">Functions</a></li>
+		  <li class="nav-item"><a class="nav-link" href="#idocs_html_structure">Triggers</a></li>
+            <li class="nav-item"><a class="nav-link" href="#idocs_color_schemes">SAM<</li>
              <li class="nav-item"><a class="nav-link" href="#idocs_theme_customization">Add Users</a></li>
            <li class="nav-item"><a class="nav-link" href="#idocs_code">Azure Code</a></li> 
           </ul>
@@ -116,24 +116,7 @@
 		  <li class="nav-item"><a class="nav-link" href="#idocs_box_layout3">All Current Readings</a></li>
           </ul>
         </li>
-        <!-- <li class="nav-item"><a class="nav-link" href="#idocs_content">Azure</a>
-			<ul class="nav flex-column">
-            <li class="nav-item"><a class="nav-link" href="#idocs_typography">Using azure for Function app</a></li>
-            <li class="nav-item"><a class="nav-link" href="#idocs_code">API management</a></li>
-            <li class="nav-item"><a class="nav-link" href="#idocs_table">Trigger in API management</a></li>
-			<!-- <li class="nav-item"><a class="nav-link" href="#idocs_icons">Icons</a></li>
-            <li class="nav-item"><a class="nav-link" href="#idocs_image">Image</a></li>
-			<li class="nav-item"><a class="nav-link" href="#idocs_video">Video</a></li> -->
-          <!-- </ul>
-		</li> --> 
-        <!-- <li class="nav-item"><a class="nav-link" href="#idocs_components">Components</a>
-          <ul class="nav flex-column">
-            <li class="nav-item"><a class="nav-link" href="#idocs_accordion">Accordion</a></li>
-            <li class="nav-item"><a class="nav-link" href="#idocs_tabs">Tabs</a></li>
-            <li class="nav-item"><a class="nav-link" href="#idocs_social_icon">Social Icon</a></li>
-            <li class="nav-item"><a class="nav-link" href="#idocs_helper_classes">Helper Classes</a></li>
-          </ul>
-        </li> -->
+       
 		<!-- <li class="nav-item"><a class="nav-link" href="#idocs_faq">FAQ</a></li> -->
         <li class="nav-item"><a class="nav-link" href="#idocs_source_credits">Source & Credits</a></li>
         <li class="nav-item"><a class="nav-link" href="#idocs_support">Support</a></li>
@@ -156,8 +139,8 @@
 		============================ -->
         <section id="idocs_start">
         <h1>StreetLeaf API Documentation</h1>
-        <h4>StreetLeaf API's Using Azure Function Apps</h4>
-        <p class="lead">Here we are using <b>azure function</b> app and triggers for create apis for data.</p>
+        <h4>Streetleaf API data retrieval, for internal use only</h4>
+        <p class="lead">Streetleaf API uses <b>Azure functions</b> to generate the API calls for clients or other apps</p>
 		<hr>
 		<div class="row">
 			<div class="col-sm-6 col-lg-4">
@@ -173,7 +156,7 @@
 				</ul>
 			</div>
 		</div>
-        <p class="alert alert-info">If you have any questions that are beyond the scope of this help file, Please feel free to email via <a target="_blank" href="mailto:giorgio@streetleaf.com">Streetleaf Tech Support</a>.</p>
+        <p class="alert alert-info">If you have any questions beyond the scope of this file, <a target="_blank" href="mailto:giorgio@streetleaf.com">Contact Streetleaf Tech Support</a>.</p>
         </section>
         
 		<hr class="divider">
@@ -181,32 +164,106 @@
         <!-- Installation
 		============================ -->
         <section id="idocs_installation">
-          <h2>API's & URL's</h2>
-          <p class="lead">Follow all are our apis which is associate with azure functions triggers:</p>
-          <ol>
-            <li>Start apis with base url currently here our <i>base url</i>  <strong>https://streetleaf.azurewebsites.net</strong> after the base url we are using <b>api</b> prefix .</li>
-            <li>after base_url & prefix we are using AZURE Function trigger name for example <code>StreetleafLogin</code> this trigger for login users  :
-            <ul>
-			<li><code>base_url/api/trigger</code> - Contains all of the assets referenced
-			  <ul>
-                <li><code>base_url/api/Login</code> - Login Users </li>
-                <li><code>base_url/api/GetProjectsList</code> - Get Project List</li>
-                <li><code>base_url/api/GetProjectsDetails</code> - Project Details</li>
-	         <li><code>base_url/api/GetPoleDetails</code> –  Poles Details.</li>			  
-                <li><code>base_url/api/GetPolesList</code> - Pole List</li>
-	       <li><code>base_url/api/GetPoleModel</code> - Single Pole Model</li>			  
-               <li><code>base_url/api/GetCurrentReadings</code> - Single Poles Current Readings</li>
-	      <li><code>base_url/api/GetCurrentReadingsForAllPoles</code> - All Poles Current Readings</li>
+         <h2>API's and URL's</h2>
+        <p class="lead">Below is a list of all APIs associated with a Azure Trigger function:</p>
+        <ol>
+          <li>All APIs start with the same base_url </i>  <strong>https://streetleaf.azurewebsites.net</strong> .</li>
+	   <li>Following the base_url the /api/ prefix is required.</li>
+          <li>Following the prefix insert any of the triggers below to get the following function:
+              *you must add ? between the function and input: </li>
+          
+<!--     <li><code>base_url/api/trigger</code> - Contains all of the assets referenced -->
+	    
+	    </br>
+	      
+		<table class="table table-bordered">
+					  <thead class="thead-dark">
+					    <tr>
+					      <th scope="col">No</th>
+					      <th scope="col">Function</th>
+					      <th scope="col">Input</th>
+					      <th scope="col">Return</th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					    <tr>
+					      <th scope="row">1</th>
+						    <td><code>base_url/api/trigger</code></td>
+					      <td>N/A</td>
+					      <td>Contains all assets referenced</td>
+					    </tr>
+					    <tr>
+					      <th scope="row">2</th>
+					      <td><code>base_url/api/Login</code></td>
+					      <td>Username </br> Password</td>
+					      <td>Returns User Login info and token</td>
+					    </tr>
+					    <tr>
+					      <th scope="row">3</th>
+					      <td><code>base_url/api/GetProjectsList</code></td>
+					      <td>token</td>
+					      <td>Return Entire Project List including Project IDs</td>
+					    </tr>
+		                              <tr>
+					      <th scope="row">4</th>
+					      <td><code>base_url/api/GetProjectsDetails</code></td>
+					      <td>Project ID </br>
+						token</td>
+					      <td>Returns Details of Specific Projec</td>
+					    </tr>
+		                              <tr>
+					      <th scope="row">5</th>
+					      <td><code>base_url/api/GetPoleDetails</code></td>
+						<td>Pole Number
+						</td>
+					      <td>All Static Information of “Pole Number"</td>
+					    </tr>
+		 			    <tr>
+					      <th scope="row">6</th>
+					      <td><code>base_url/api/GetPolesList</code></td>
+					      <td>Project ID <br>
+							token
+							</td>
+					      <td>Return List of Poles relative to the project</td>
+					    </tr>
+		  	 			  <tr>
+					      <th scope="row">7</th>
+					      <td><code>base_url/api/GetPoleModel</code></td>
+					      <td> Model Name <br> token</td>
+					      <td>ModelInfo</td>
+					    </tr>
+		  		  	 			  <tr>
+					      <th scope="row">8</th>
+					      <td><code>base_url/api/GetCurrentReadings</code></td>
+					      <td>Pole ID</td>
+					      <td>Current readings of pole from Pole ID</td>
+					    </tr>
+		  			  <tr>
+					      <th scope="row">9</th>
+					      <td><code>base_url/api/GetCurrentReadingsForAllPoles</code></td>
+					      <td>Project Id</td>
+					      <td>All Current readings of poles from Project ID</td>
+					    </tr>
+					  </tbody>
+</table>
+                
                
-              </ul>
-			</li>
-<!-- 			<li><code>base_url/api</code> - <a href="https://streetleaf.azurewebsites.net">Homepage</a> -->
-			</ul>
-            </li>
-            <!-- <li>You should upload all or specific HTML files as per your need.</li>
-            <li>You are good to go for adding your content now!</li> -->
-          </ol>
+	        			  
+           
+	           
+         
+    
+
+        </ol>
            <!-- <p><a class="popup-img" href="assets/images/img1.png"><img class="img-fluid border" src="assets/images/img1.png" alt=""></a></p> -->
+        </section>
+        
+		<hr class="divider">
+	      
+	       <section id="idocs_sass">
+          <h2>Function App</h2>
+          <p>Azure Function is a serverless compute service that enables user to run event-triggered code without having to provision or manage infrastructure. Being as a trigger-based service, it runs a script or piece of code in response to a variety of events. <code>Azure Function App</code></p>
+          <!-- <p><a class="popup-img" href="assets/images/img2.png"><img class="img-fluid border" src="assets/images/img2.png" alt=""></a></p> -->
         </section>
         
 		<hr class="divider">
@@ -238,13 +295,7 @@
 		        
 		<!-- Sass
 		============================ -->
-        <section id="idocs_sass">
-          <h2>Function App</h2>
-          <p>Azure Function is a serverless compute service that enables user to run event-triggered code without having to provision or manage infrastructure. Being as a trigger-based service, it runs a script or piece of code in response to a variety of events. <code>Azure Function App</code></p>
-          <!-- <p><a class="popup-img" href="assets/images/img2.png"><img class="img-fluid border" src="assets/images/img2.png" alt=""></a></p> -->
-        </section>
-        
-		<hr class="divider">
+       
 		
 		<!-- Color Schemes
 		============================ -->
